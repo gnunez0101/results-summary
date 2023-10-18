@@ -121,44 +121,82 @@ body {
         font-weight: 700;
         color: var(--DarkGrayBlue);
         padding-top: 23px;
-        padding-bottom: 42px;
+        padding-bottom: 25px;
     }
 
     & .items {
         display: flex;
         flex-direction: column;
-        gap: 2.84rem;
+        gap: 0.9rem;
 
         & .row:nth-child(1) {
-            color: var(--LightRed);
+            background-color: color-mix(in oklab, 
+                var(--LightRed) 6%, 
+                transparent 100%);
+            & .category {
+                color: var(--LightRed);
+            }
         }
 
         & .row:nth-child(2) {
-            color: var(--OrangeyYellow);
+            background-color: color-mix(in oklab, 
+                var(--OrangeyYellow) 6%, 
+                transparent 100%);
+            & .category {
+                color: var(--OrangeyYellow);
+            }
         }
 
         & .row:nth-child(3) {
-            color: var(--GreenTeal);
+            background-color: color-mix(in oklab, 
+                var(--GreenTeal) 6%, 
+                transparent 100%);
+            & .category {
+                color: var(--GreenTeal);
+            }
         }
 
         & .row:nth-child(4) {
-            color: var(--CobaltBlue);
+            background-color: color-mix(in oklab, 
+                var(--CobaltBlue) 6%, 
+                transparent 100%);
+            & .category {
+                color: var(--CobaltBlue);
+            }
         }
 
         & .row {
             display: flex;
             flex-direction: row;
             justify-content: space-between;
+            padding-block: 17px;
+            padding-inline: 12px;
+            border-radius: 10px;
             font-size: 0.87rem;
 
             & .category {
+                display: flex;
                 font-size: inherit;
+
+                & img {
+                    padding-left: 0px;
+                    padding-right: 10px;
+                }
             }
 
             & .score {
                 font-size: inherit;
             }
         }
+    }
+
+    & button {
+        margin-top: 25px;
+        padding: 14px;
+        border: none;
+        border-radius: 40px;
+        background-color: var(--DarkGrayBlue);
+        color: var(--White);
     }
 }
 
