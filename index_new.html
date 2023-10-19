@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@500;700;800&display=swap" rel="stylesheet">
+  <link rel="icon" type="image/png" sizes="32x32" href="./assets/images/favicon-32x32.png">
+  <link rel="stylesheet" href="./style.css" type="text/css">
+  
+  <title>Frontend Mentor | Results summary component</title>
+
+</head>
+<body>
+  <main class="card">
+    <section class="result">
+      <div class="title">
+        Your Result
+      </div>
+      <div class="circle">
+        <div class="circle-main">76</div>
+        <div class="circle-of">of 100</div>
+      </div>
+      <div class="sub-title">Great</div>
+      <div class="comment">
+        You scored higher than 65% of the people who have taken these tests.  
+      </div>
+    </section>
+    <section class="summary">
+      <div class="summary-wrapper">
+        <div class="title">Summary</div>
+        <div class="items">
+          <article class="row">
+            <div class="category">
+              <img src="./assets/images/icon-reaction.svg" alt="Reaction"/>Reaction</div>
+            <div class="score">80<span> / 100</span>
+            </div>
+          </article>
+          <article class="row">
+            <div class="category">
+              <img src="./assets/images/icon-memory.svg" alt="Memory"/>Memory</div>
+            <div class="score">
+              92<span> / 100</span>
+            </div>
+          </article>
+          <article class="row">
+            <div class="category">
+              <img src="./assets/images/icon-verbal.svg" alt="Verbal"/>Verbal</div>
+            <div class="score">
+              61<span> / 100</span>
+            </div>
+          </article>
+          <article class="row">
+            <div class="category">
+              <img src="./assets/images/icon-visual.svg" alt="Visual"/>Visual</div>
+            <div class="score">72<span> / 100</span>
+            </div>
+          </article>
+        </div>
+        <button type="submit">Continue</button>
+      </div>
+    </section>
+  </main>
+  <footer class="attribution">
+    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
+    Coded by <a href="#">Gonzalo M. Núñez B.</a>.
+  </footer>
+  <script type="module" src="./script.js"></script>
+</body>
+</html>
