@@ -205,13 +205,13 @@ body {
             border-radius: 40px;
             background-color: var(--DarkGrayBlue);
             color: var(--White);
-            transition: all 250ms ease-in-out;
+            transition: all 150ms ease-in-out;
 
             &:active {
                 background-color: var(--CobaltBlue);
             }
 
-            &:hover, &:focus {
+            &:hover, &:focus-visible {
                 outline: 7px solid var(--LightLavender);
                 cursor: pointer;
             }

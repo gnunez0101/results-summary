@@ -1,4 +1,4 @@
-import './index.css'
+import './style.css'
 
 function App() {
 
@@ -6,9 +6,7 @@ function App() {
     <>
       <main className="card">
         <section className="result">
-          <div className="title">
-            Your Result
-          </div>
+          <div className="title">Your Result</div>
           <div className="circle">
             <div className="circle-main">76</div>
             <div className="circle-of">of 100</div>
