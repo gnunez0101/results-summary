@@ -1,6 +1,34 @@
+import { useEffect, useState } from 'react'
 import './style.css'
 
+// Types for Typescript:
+type typeCategory = {
+  category: string,
+  score: number,
+  icon: string
+}
+
 function App() {
+
+  const [dataCateg, setDataCateg] = useState<typeCategory[]>()
+  const [result, setResult] = useState(0)
+
+  useEffect(() => {
+    // Loading Data from JSON file
+    fetch ('./data.json')
+      .then(response => response.json())
+      .then(data => setDataCateg(data))
+      .catch(error => console.log(error))
+  }, [])
+
+  useEffect(() => {
+    if(dataCateg) {
+      // Calculations for Results:
+      let res = 0
+      dataCateg.map( item => res += item.score )    // Calculating total score
+      setResult(Math.round(res / dataCateg.length)) // Calculating average
+    }
+  }, [dataCateg])
 
   return (
     <>
@@ -8,7 +36,7 @@ function App() {
         <section className="result">
           <div className="title">Your Result</div>
           <div className="circle">
-            <div className="circle-main">76</div>
+            <div className="circle-main">{result}</div>
             <div className="circle-of">of 100</div>
           </div>
           <div className="sub-title">Great</div>
@@ -20,32 +48,13 @@ function App() {
           <div className="summary-wrapper">
             <div className="title">Summary</div>
             <div className="items">
-              <article className="row">
-                <div className="category">
-                  <img src="./assets/images/icon-reaction.svg" alt="Reaction"/>Reaction</div>
-                <div className="score">80<span> / 100</span>
-                </div>
-              </article>
-              <article className="row">
-                <div className="category">
-                  <img src="./assets/images/icon-memory.svg" alt="Memory"/>Memory</div>
-                <div className="score">
-                  92<span> / 100</span>
-                </div>
-              </article>
-              <article className="row">
-                <div className="category">
-                  <img src="./assets/images/icon-verbal.svg" alt="Verbal"/>Verbal</div>
-                <div className="score">
-                  61<span> / 100</span>
-                </div>
-              </article>
-              <article className="row">
-                <div className="category">
-                  <img src="./assets/images/icon-visual.svg" alt="Visual"/>Visual</div>
-                <div className="score">72<span> / 100</span>
-                </div>
-              </article>
+              {/* Display Categories: */}
+              { dataCateg && dataCateg.map( (row: typeCategory, index: number) => 
+                  <Category key={index}
+                    category = {row.category}
+                    score    = {row.score}
+                    icon     = {row.icon}/>
+              )}
             </div>
             <button type="submit">Continue</button>
           </div>
@@ -58,5 +67,16 @@ function App() {
     </>
   )
 }
-
 export default App
+
+// Component to render each Category with its data:
+function Category ( props: typeCategory ) {
+  return (
+    <article className="row">
+      <div className="category">
+        <img src={props.icon} alt={props.category}/>{props.category}</div>
+      <div className="score">{props.score}<span> / 100</span>
+      </div>
+    </article>
+  )
+}
