@@ -10,6 +10,7 @@ type typeCategory = {
 
 function App() {
 
+  // States
   const [dataCateg, setDataCateg] = useState<typeCategory[]>()
   const [result, setResult] = useState(0)
 
@@ -74,7 +75,7 @@ function Category ( props: typeCategory ) {
   return (
     <article className="row">
       <div className="category">
-        <img src={props.icon} alt={props.category}/>{props.category}</div>
+        <img src={props.icon} alt={props.category} />{props.category}</div>
       <div className="score">{props.score}<span> / 100</span>
       </div>
     </article>
