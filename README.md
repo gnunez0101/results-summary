@@ -50,7 +50,7 @@ After been succesful with pixel perfect appereance I went for the bonus writing 
 - Mobile-first workflow
 - React JS
 - Typescript
-- New CSS color-mix command for transparencies
+- CSS color-mix new function for transparencies
 
 ### What I learned
 
