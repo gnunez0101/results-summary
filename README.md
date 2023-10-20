@@ -16,7 +16,7 @@ This is a solution to the [Results summary component challenge on Frontend Mento
 
 ## Overview
 
-This challenge is a very simple page showing a single card with towo columns showing data inside. A very good exercise for practicing HTML layouts and CSS styling for modile and desktop. A bonus challenge was added for loading a JSON file for data retrival.
+This challenge is a very simple page showing a single card with two columns showing data inside. A very good exercise for practicing HTML layouts and CSS styling for mobile and desktop. A bonus challenge was added for loading a JSON file for data retrival.
 
 ### The challenge
 
